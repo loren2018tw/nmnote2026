@@ -6,12 +6,15 @@ hero:
   text: "網管筆記"
   tagline: "「如果你知道往那走，世界會為你讓出路～～」"
   image:
-    src: ./logo2026.png # 圖片放在 public 資料夾下
+    src: ./logo2026.png
     alt: Logo
   actions:
+    - theme: brand
+      text: 📖 VirtualBox
+      link: /10-VirtualBox/05-vm_vs_container.html
     - theme: brand # 品牌色按鈕
-      text: 📖 開始閱讀
-      link: /tech/
+      text: 📖 Librenms
+      link: /20-librenms/10_librenms_introduce.html
     - theme: alt # 灰色按鈕
       text: 🐙 GitHub
       link: https://github.com/loren2018tw

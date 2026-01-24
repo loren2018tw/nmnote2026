@@ -33,6 +33,7 @@ export default defineConfig({
         resolvePath: "/10-VirtualBox/",
         removePrefixAfterOrdering: true,
         prefixSeparator: "-",
+        useTitleFromFileHeading: true,
       },
       {
         documentRootPath: "/docs",
@@ -40,6 +41,7 @@ export default defineConfig({
         resolvePath: "/WSL2/",
         removePrefixAfterOrdering: true,
         prefixSeparator: "-",
+        useTitleFromFileHeading: true,
       },
       {
         documentRootPath: "/docs",
