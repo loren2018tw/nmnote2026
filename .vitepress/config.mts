@@ -19,15 +19,6 @@ export default defineConfig({
       { text: "Librenms", link: "/20-librenms/10_librenms_introduce" },
     ],
 
-    // sidebar: [
-    //   {
-    //     text: 'Examples',
-    //     items: [
-    //       { text: 'Markdown Examples', link: '/markdown-examples' },
-    //       { text: 'Runtime API Examples', link: '/api-examples' }
-    //     ]
-    //   }
-    // ],
     sidebar: generateSidebar([
       {
         documentRootPath: "/docs",
@@ -56,23 +47,6 @@ export default defineConfig({
       },
     ]),
 
-    //     sidebar: [
-    //       generateSidebar({
-    //         documentRootPath: "/docs", // 你的筆記所在目錄
-    //         removePrefixAfterOrdering: true,
-    //         prefixSeparator: "-",
-    //         collapsed: true, // 預設折疊選單
-    //         useTitleFromFileHeading: true, // 使用文章內的 H1 作為側邊欄標題
-    //       }),
-    //       {
-    //         items: "WSL2",
-    //         // documentRootPath: "/docs",
-    //         // scanStartPath: "WSL2",
-    //         // resolvePath: "/WSL2/",
-    //         // removePrefixAfterOrdering: true,
-    //         // prefixSeparator: "-",
-    //       },
-    //     ],
 
     // socialLinks: [
     //   { icon: "github", link: "https://github.com/vuejs/vitepress" },
