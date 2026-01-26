@@ -6,7 +6,7 @@ hero:
   text: "網管筆記"
   tagline: "「如果你知道往那走，世界會為你讓出路～～」"
   image:
-    src: ./logo2026.png
+    src: logo2026.png
     alt: Logo
   actions:
     - theme: brand
