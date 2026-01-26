@@ -6,6 +6,8 @@ import obsidian from "markdown-it-obsidian";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   srcDir: "docs",
+  base: "/nmnote2026/",
+  ignoreDeadLinks: true,
 
   title: "Loren's 網管筆記",
   description: "如果你知道往那走，世界會為你讓出路～～",

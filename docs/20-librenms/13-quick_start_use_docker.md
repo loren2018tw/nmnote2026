@@ -105,7 +105,7 @@ sudo systemctl restart docker
 ### 4.2. 修改 librenms 提供的 compose.yml
 
 1. 將整個檔案替換成以下內容：
-```YMAL title="compose.yml"
+```YAML title="compose.yml"
 name: librenms
 
 services:
