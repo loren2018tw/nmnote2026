@@ -3,3 +3,10 @@
   --vp-custom-block-info-border: rgba(60, 60, 67, 0.2);
   --vp-custom-block-info-text: #3c3c43;
 }
+
+.group:has([role='button']) .VPSidebarItem.level-0 .items {
+  padding-left: 16px !important;
+  border-left: 1px solid var(--vp-c-divider);
+  border-radius: 2px;
+  transition: background-color 0.25s;
+}
