@@ -21,7 +21,7 @@
 
 接著填入要受控的裝置 ip ( ipv6 也可以)、 udp( 如果使用ipv6則請改選擇 udp6)， community 填入自己設定的社群名稱，community  留空白表示就是  public。
 
-這裡我們將 ip 填入 localhost ，按下 ++Add Device++ ，先讓 nms 監控自己這台主機。
+這裡我們將 ip 填入 localhost ，按下 **Add Device** ，先讓 nms 監控自己這台主機。
 
 ![](2023-12-15-20-04-11.png)
 

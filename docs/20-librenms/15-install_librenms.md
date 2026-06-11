@@ -1,9 +1,9 @@
 
-# 安裝 Librenms 在 Lubuntu 24.04
+# 安裝 Librenms 在 Lubuntu 26.04
 
 
 > [!info] 
-> 1. 先安裝好 Lubuntu 24.04 ，假設安裝時自訂的 Linux 系統使用者帳號密碼為 **【user:user】**
+> 1. 先安裝好 Lubuntu 26.04 ，假設安裝時自訂的 Linux 系統使用者帳號密碼為 **【user:user】**
 > 2. 以下使用一般使用者命令列方式做安裝示範，所以安裝指令前都會加上 sudo，如果是使用 root 帳號，則 sudo 可以省略
 
 ## 1. 安裝必要的套件
@@ -46,11 +46,12 @@ sudo -u librenms ./scripts/composer_wrapper.php install --no-dev
 ## 6. 設定時區
 
 ### 6.1. php時區
-編輯 /etc/php/8.3/fpm/php.ini 和 /etc/php/8.3/cli/php.ini 兩個檔案（須有管理權限）。
+編輯 /etc/php/8.5/fpm/php.ini 和 /etc/php/8.5/cli/php.ini 兩個檔案（須有管理權限）。
 
 >[!Tip]
 >編輯系統的文字檔（配置檔）可以使用文字編輯器， 在命令列視窗下，可以使用 vi 或 nano 來編輯文字檔，這裡推薦使用 nano 會比較容易操作。例如要編輯上述的檔案可以使用
->`sudo nano /etc/php/8.3/fpm/php.ini`
+>`sudo nano /etc/php/8.5/fpm/php.ini`
+>`sudo nano /etc/php/8.5/cli/php.ini`
 >
 >![500x370](image-1.png)
 >
@@ -109,10 +110,10 @@ exit
 複製 www.conf 為範本到新配置檔 librenms.conf
 
 ```bash
-sudo cp /etc/php/8.3/fpm/pool.d/www.conf /etc/php/8.3/fpm/pool.d/librenms.conf
+sudo cp /etc/php/8.5/fpm/pool.d/www.conf /etc/php/8.5/fpm/pool.d/librenms.conf
 ```
 
-編輯 /etc/php/8.3/fpm/pool.d/librenms.conf
+編輯 /etc/php/8.5/fpm/pool.d/librenms.conf
 ==將檔案內的 `[www]` 改為 `[librenms]`==
 
 將 `user` 和  `group` 設定改為  **librenms**(原來是設定為 `www-data`)
@@ -122,7 +123,7 @@ user = librenms
 group = librenms
 ```
 
-將 `listen` 後面改為唯一不重複的路徑，這個路徑要跟 WWW Server的設定一致，原設定為 /run/php/php8.3-fpm.sock ，這裡我們改為 **/run/php-fpm-librenms.sock**
+將 `listen` 後面改為唯一不重複的路徑，這個路徑要跟 WWW Server的設定一致，原設定為 /run/php/php8.5-fpm.sock ，這裡我們改為 **/run/php-fpm-librenms.sock**
 
 ```
 listen = /run/php-fpm-librenms.sock
@@ -163,7 +164,7 @@ server {
 存檔後重新啟動 nginx 網頁伺服器
 ```bash
 sudo systemctl restart nginx 
-sudo systemctl restart php8.3-fpm
+sudo systemctl restart php8.5-fpm
 ```
 
 ## 10. 啟用 lnms 命令自動完成
@@ -241,7 +242,7 @@ sudo cp /opt/librenms/misc/librenms.logrotate /etc/logrotate.d/librenms
 > 還好 librenms 安裝過程會紀錄目前進度，所以只要重整這個頁面，再次按下【Build Database】就可以繼續未完成的動作。
 
 
-建立 Librenms 網頁界面的管理者帳號、密碼，這裡我們都設定為 librenms。
+建立 Librenms 網頁界面的管理者帳號、密碼，這裡我們都設定為 librenms 密碼： ==librenmslibrenms==。
 
 ![1738554880725 1.png](1738554880725%201.png)
 

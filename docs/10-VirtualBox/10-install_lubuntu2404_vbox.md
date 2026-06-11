@@ -11,7 +11,7 @@ tags:
 >[!Info]
 >這一步驟是要在實體電腦安裝 Lubuntu 才需要製作 Lubuntu 的開機usb，如果是要用 VirtualBox 安裝虛擬機器，則只要下載 lubuntu iso即可。
 
-到 Lubuntu 官網 [https://lubuntu.me/downloads/]() 下載 lubuntu 24.04 iso 檔，使用 rusuf [ https://rufus.ie/zh_TW/]()  軟體製作 usb 開機碟。
+到 Lubuntu 官網 [https://lubuntu.me/downloads/](https://lubuntu.me/downloads/) 下載 lubuntu 26.04 iso 檔，使用 rusuf [ https://rufus.ie/zh_TW/](https://rufus.ie/zh_TW/)  軟體製作 usb 開機碟。
 
 ## 2. 安裝 VirtualBox 虛擬機管理系統
 
