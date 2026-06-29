@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@types/markdown-it-footnote": "^3.0.4",
     "vitepress": "^2.0.0-alpha.15",
     "vue": "^3.5.27"
   },
@@ -9,6 +10,7 @@
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
+    "markdown-it-footnote": "^4.0.0",
     "markdown-it-obsidian": "^1.1.0",
     "vitepress-sidebar": "^1.33.1"
   }

@@ -1,9 +1,10 @@
+# 安裝 Librenms 在 Lubuntu 24.04
 
-# 安裝 Librenms 在 Lubuntu 26.04
+官方安裝說明文件[^1]
 
-
-> [!info] 
-> 1. 先安裝好 Lubuntu 26.04 ，假設安裝時自訂的 Linux 系統使用者帳號密碼為 **【user:user】**
+> [!info]
+>
+> 1. 先安裝好 Lubuntu 24.04 ，假設安裝時自訂的 Linux 系統使用者帳號密碼為 **【user:user】**
 > 2. 以下使用一般使用者命令列方式做安裝示範，所以安裝指令前都會加上 sudo，如果是使用 root 帳號，則 sudo 可以省略
 
 ## 1. 安裝必要的套件
@@ -35,7 +36,6 @@ sudo setfacl -d -m g::rwx /opt/librenms/rrd /opt/librenms/logs /opt/librenms/boo
 sudo setfacl -R -m g::rwx /opt/librenms/rrd /opt/librenms/logs /opt/librenms/bootstrap/cache/ /opt/librenms/storage/
 ```
 
-
 ## 5. 安裝 PHP 相依性管理工具(composer)
 
 ```bash
@@ -46,36 +46,39 @@ sudo -u librenms ./scripts/composer_wrapper.php install --no-dev
 ## 6. 設定時區
 
 ### 6.1. php時區
+
 編輯 /etc/php/8.5/fpm/php.ini 和 /etc/php/8.5/cli/php.ini 兩個檔案（須有管理權限）。
 
->[!Tip]
->編輯系統的文字檔（配置檔）可以使用文字編輯器， 在命令列視窗下，可以使用 vi 或 nano 來編輯文字檔，這裡推薦使用 nano 會比較容易操作。例如要編輯上述的檔案可以使用
->`sudo nano /etc/php/8.5/fpm/php.ini`
->`sudo nano /etc/php/8.5/cli/php.ini`
+> [!Tip]
+> 編輯系統的文字檔（配置檔）可以使用文字編輯器， 在命令列視窗下，可以使用 vi 或 nano 來編輯文字檔，這裡推薦使用 nano 會比較容易操作。例如要編輯上述的檔案可以使用
+> `sudo nano /etc/php/8.5/fpm/php.ini`
+> `sudo nano /etc/php/8.5/cli/php.ini`
 >
->![500x370](image-1.png)
+> ![500x370](image-1.png)
 >
->nano 的命令提示顯示在下方，例如要存檔就是使用 ++ctrl+o++... 不用背是不是很方便 :)
+> nano 的命令提示顯示在下方，例如要存檔就是使用 ++ctrl+o++... 不用背是不是很方便 :)
 
 PHP 設定檔支援的時區，請參閱 [https://php.net/manual/en/timezones.php](https://php.net/manual/en/timezones.php)
 在**上述兩個檔案**中，找到 ;date.timezone = 這一行的設定，將前面的分號（註解）去掉，將設定改成
 `date.timezone = Asia/Taipei`
 
 ### 6.2. 作業系統時區
+
 ```
 sudo timedatectl set-timezone Asia/Taipei
 ```
 
 ## 7. 配置 MariaDB
 
-編輯  /etc/mysql/mariadb.conf.d/50-server.cnf 配置檔
-在  `[mysqld]` 區塊內加入以下設定( ===`[mysqld]` 已經在設定檔內，不需要輸入===)
+編輯 /etc/mysql/mariadb.conf.d/50-server.cnf 配置檔
+在  `[mysqld]` 區塊內加入以下設定( **`[mysqld]` 已經在設定檔內，不需要輸入**)
 
 ```
 [mysqld]
 innodb_file_per_table=1
 lower_case_table_names=0
 ```
+
 儲存配置檔，然後重新啟動 MariaDB 資料庫系統
 
 ```bash
@@ -90,10 +93,10 @@ sudo systemctl restart mariadb
 sudo mysql -u root
 ```
 
->[!note]
-下面是建立資料庫相關的 sql script 指令腳本，在 **MySql 文字客戶端界面下** (不是 Linux 的命令列環境下)貼上下面的 script，==執行完腳本之後會自動退出到 Linux 的命令列==
+> [!note]
+> 下面是建立資料庫相關的 sql script 指令腳本，在 **MySql 文字客戶端界面下** (不是 Linux 的命令列環境下)貼上下面的 script，==執行完腳本之後會自動退出到 Linux 的命令列==
 >
->如果為了安全性可以將 'password' 改成你要使用的資料庫存取密碼，記住這個密碼，後面的網頁安裝步驟會用到
+> 如果為了安全性可以將 'password' 改成你要使用的資料庫存取密碼，記住這個密碼，後面的網頁安裝步驟會用到
 
 ```
 CREATE DATABASE librenms CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -110,13 +113,13 @@ exit
 複製 www.conf 為範本到新配置檔 librenms.conf
 
 ```bash
-sudo cp /etc/php/8.5/fpm/pool.d/www.conf /etc/php/8.5/fpm/pool.d/librenms.conf
+sudo cp /etc/php/8.3/fpm/pool.d/www.conf /etc/php/8.3/fpm/pool.d/librenms.conf
 ```
 
-編輯 /etc/php/8.5/fpm/pool.d/librenms.conf
-==將檔案內的 `[www]` 改為 `[librenms]`==
+編輯 /etc/php/8.3/fpm/pool.d/librenms.conf
+**將檔案內的 `[www]` 改為 `[librenms]`**
 
-將 `user` 和  `group` 設定改為  **librenms**(原來是設定為 `www-data`)
+將 `user` 和  `group` 設定改為 **librenms**(原來是設定為 `www-data`)
 
 ```
 user = librenms
@@ -129,8 +132,8 @@ group = librenms
 listen = /run/php-fpm-librenms.sock
 ```
 
->[!Tip]
->如果這機器沒有其他 PHP 網頁應用程式，可以刪除 www.conf 來節省一些系統資源。
+> [!Tip]
+> 如果這機器沒有其他 PHP 網頁應用程式，可以刪除 www.conf 來節省一些系統資源。
 
 ## 9. 組態 Nginx Web Server
 
@@ -153,23 +156,24 @@ server {
 		fastcgi_pass unix:/run/php-fpm-librenms.sock;
 		fastcgi_split_path_info ^(.+\.php)(/.+)$;
 		include fastcgi.conf;
-	}  
+	}
 	location ~ /\.(?!well-known).* {
 		deny all;
 	}
 }
 ```
 
-
 存檔後重新啟動 nginx 網頁伺服器
+
 ```bash
-sudo systemctl restart nginx 
-sudo systemctl restart php8.5-fpm
+sudo systemctl restart nginx
+sudo systemctl restart php8.3-fpm
 ```
 
 ## 10. 啟用 lnms 命令自動完成
 
 這個動作可以讓 lnms 命令跟一般 Linux 命令一樣，使用 Tab 鍵可以自動補齊完整指令。
+
 ```bash
 sudo ln -s /opt/librenms/lnms /usr/bin/lnms
 sudo cp /opt/librenms/misc/lnms-completion.bash /etc/bash_completion.d/
@@ -178,6 +182,7 @@ sudo cp /opt/librenms/misc/lnms-completion.bash /etc/bash_completion.d/
 ## 11. 配置 snmpd
 
 複製 librenms 提供的 snmpd 設定範本
+
 ```
 sudo cp /opt/librenms/snmpd.conf.example /etc/snmp/snmpd.conf
 sudo chmod 755 /etc/snmp/snmpd.conf
@@ -192,6 +197,7 @@ sudo curl -o /usr/bin/distro https://raw.githubusercontent.com/librenms/librenms
 sudo systemctl enable snmpd
 sudo systemctl restart snmpd
 ```
+
 ## 12. 設定定時工作(Cron job)
 
 ```bash
@@ -210,16 +216,15 @@ sudo systemctl start librenms-scheduler.timer
 ## 14. 複製日誌 (logrotate) 滾動分割設定
 
 logrotate 是一個Unix/Linux 系統上的日誌管理工具，它的主要功能是自動輪轉、壓縮和刪除日誌文件，透過定期輪轉日誌文件，防止日誌文件變得過大。
-LibreNMS 將日誌紀錄儲存在 `/opt/librenms/logs` 這目錄，複製設定檔讓作業系統  幫我們做 logrotate 動作。
+LibreNMS 將日誌紀錄儲存在 `/opt/librenms/logs` 這目錄，複製設定檔讓作業系統 幫我們做 logrotate 動作。
 
 ```bash
 sudo cp /opt/librenms/misc/librenms.logrotate /etc/logrotate.d/librenms
 ```
 
-
 ## 15. 網頁安裝步驟
 
-接下來開啟網頁瀏覽器（如果使用虛擬機，請在虛擬機的作業系統開啟瀏覽器），打開本地端的位址，依畫面指示完成安裝 
+接下來開啟網頁瀏覽器（如果使用虛擬機，請在虛擬機的作業系統開啟瀏覽器），打開本地端的位址，依畫面指示完成安裝
 
 [http://localhost](http://localhost)
 
@@ -231,28 +236,24 @@ sudo cp /opt/librenms/misc/librenms.logrotate /etc/logrotate.d/librenms
 確認連線正確後，接著在資料庫建立資料表，這步驟會花比較多時間，請耐心等待
 ![534x305](1738522802089.png)
 
-
-
-
 > [!warning]
 > ibrenms 建立資料庫結構需要非常久的時間（可能超過10分鐘），因為新版瀏覽器內建的連逾時限制，導致可能出現 timed out 的錯誤訊息。
-> 
+>
 > ![1747464748570.png](1747464748570.png)
-> 
+>
 > 還好 librenms 安裝過程會紀錄目前進度，所以只要重整這個頁面，再次按下【Build Database】就可以繼續未完成的動作。
 
-
-建立 Librenms 網頁界面的管理者帳號、密碼，這裡我們都設定為 librenms 密碼： ==librenmslibrenms==。
+建立 Librenms 網頁界面的管理者帳號、密碼，這裡假設我們設定
+帳號:librenms
+密碼： **librenmslibrenms**。
 
 ![1738554880725 1.png](1738554880725%201.png)
 
 按下 【Finish Install】 就完成網頁安裝
 ![500x318](1738555043683.png)
 
-
-重新載入 http://localhost 就可以開始使用 librenms 
-
+重新載入 http://localhost 就可以開始使用 librenms
 
 ## 16. 參考資料
-[^1]: [Librenms官方文件-Install LibreNMS](https://docs.librenms.org/Installation/Install-LibreNMS/)
 
+[^1]: [Librenms官方文件-Install LibreNMS](https://docs.librenms.org/Installation/Install-LibreNMS/)

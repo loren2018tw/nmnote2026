@@ -4,14 +4,15 @@ tags:
   - ubuntu_24_04
 軟體版本: VirtualBox 7.1.6 Lubuntu 22.04
 ---
+
 # 使用 Virtual Box 安裝 Lubuntu 24.04
 
 ## 1. 製作 lubuntu 安裝開機 usb
 
->[!Info]
->這一步驟是要在實體電腦安裝 Lubuntu 才需要製作 Lubuntu 的開機usb，如果是要用 VirtualBox 安裝虛擬機器，則只要下載 lubuntu iso即可。
+> [!Info]
+> 這一步驟是要在實體電腦安裝 Lubuntu 才需要製作 Lubuntu 的開機usb，如果是要用 VirtualBox 安裝虛擬機器，則只要下載 lubuntu iso即可。
 
-到 Lubuntu 官網 [https://lubuntu.me/downloads/](https://lubuntu.me/downloads/) 下載 lubuntu 26.04 iso 檔，使用 rusuf [ https://rufus.ie/zh_TW/](https://rufus.ie/zh_TW/)  軟體製作 usb 開機碟。
+到 Lubuntu 官網 [https://lubuntu.me/downloads/](https://lubuntu.me/downloads/) 下載 lubuntu 24.04 iso 檔，使用 rusuf [ https://rufus.ie/zh_TW/](https://rufus.ie/zh_TW/) 軟體製作 usb 開機碟。
 
 ## 2. 安裝 VirtualBox 虛擬機管理系統
 
@@ -22,7 +23,7 @@ tags:
 
 ![20250123-1.png](20250123-1.png)
 
-自取一個虛擬機名稱、檔案系統要放置的資料夾位置以及要用來安裝這台機器的作業系統安裝光碟 iso 
+自取一個虛擬機名稱、檔案系統要放置的資料夾位置以及要用來安裝這台機器的作業系統安裝光碟 iso
 
 ![1738631182167.png](1738631182167.png)
 
@@ -34,9 +35,9 @@ tags:
 
 ![1738631358998.png](1738631358998.png)
 
->[!Tip]
->【預先配置完整大小】建議勾選，勾選後表示虛擬硬碟的檔案會直接預分配我們設定的25G，如果不勾選，則虛擬硬碟會依據我們系統需要的空間，**慢慢變大**。
->有沒有預分配，在磁碟寫入的時候，經測試寫入速度會相差到5～10倍。
+> [!Tip]
+> 【預先配置完整大小】建議勾選，勾選後表示虛擬硬碟的檔案會直接預分配我們設定的25G，如果不勾選，則虛擬硬碟會依據我們系統需要的空間，**慢慢變大**。
+> 有沒有預分配，在磁碟寫入的時候，經測試寫入速度會相差到5～10倍。
 
 ![1738631841384.png](1738631841384.png)
 
@@ -44,28 +45,27 @@ tags:
 
 ![1738631992768.png](1738631992768.png)
 
-
->[!Tip]
->啟動後右方會出現一些提示訊息，我們可以關閉這個訊息。第一個提示訊息很重要，當虛擬機的視窗取得焦點時，會自動攔截我們的滑鼠以及鍵盤操作，然後傳送給虛擬機。   
->如果我們按下「右 Ctrl」則會變成傳統（非自動擷取）模式，整個滑鼠鍵盤都會被限制在虛擬機的區域，變成沒辦法操作主控機(Host)的作業系統，一樣可以按下「右 Ctrl」會恢復成「自動擷取模式」，大家可以試試看差別。
+> [!Tip]
+> 啟動後右方會出現一些提示訊息，我們可以關閉這個訊息。第一個提示訊息很重要，當虛擬機的視窗取得焦點時，會自動攔截我們的滑鼠以及鍵盤操作，然後傳送給虛擬機。  
+> 如果我們按下「右 Ctrl」則會變成傳統（非自動擷取）模式，整個滑鼠鍵盤都會被限制在虛擬機的區域，變成沒辦法操作主控機(Host)的作業系統，一樣可以按下「右 Ctrl」會恢復成「自動擷取模式」，大家可以試試看差別。
 
 ![274x403](20250123-7.png)
 
-
 ## 3. 安裝 Lubuntu
-* 使用 usb 開機，執行第一個選項，就會先以 live cd 的模式進入 lubuntu 作業系統的界面
+
+- 使用 usb 開機，執行第一個選項，就會先以 live cd 的模式進入 lubuntu 作業系統的界面
 
 ![20250122-2.png](20250122-2.png)
 
-* 點選 「 Install Lubuntu 」
- 
+- 點選 「 Install Lubuntu 」
+
 ![20250122-3.png](20250122-3.png)
 
-* 依照安裝指示**一直按下一步**即可，以下僅顯示需要做選擇或輸入的部份提示
-![20250122-4.png](20250122-4.png)
+- 依照安裝指示**一直按下一步**即可，以下僅顯示需要做選擇或輸入的部份提示
+  ![20250122-4.png](20250122-4.png)
 
-* ubuntu 的衍生套件預設 **不啟用 root 帳號**，必須建一個自取帳號名稱的一般帳號，避免惡意程式一開始就知道要用 root 去暴力破解密碼。這裡我們將帳號、密碼都設定為 **「user」**
-![20250122-5.png](20250122-5.png)
+- ubuntu 的衍生套件預設 **不啟用 root 帳號**，必須建一個自取帳號名稱的一般帳號，避免惡意程式一開始就知道要用 root 去暴力破解密碼。這裡我們將帳號、密碼都設定為 **「user」**
+  ![20250122-5.png](20250122-5.png)
 
 安裝完成後，會提醒我們移除 OS 安裝光碟(使用虛擬機不需要這個動作)，**必須按下 Enter** 才會重新開機。
 
@@ -78,19 +78,18 @@ tags:
 
 ![1738734214908.png](1738734214908.png)
 
-
-使用「檔案總管」開啟插入的光碟內容，我們要執行裡面的  VBoxLinuxAdditions.run
+使用「檔案總管」開啟插入的光碟內容，我們要執行裡面的 VBoxLinuxAdditions.run
 ![20250123-8.png](20250123-8.png)
 
 因為必須使用 root 權限執行，我們可以開啟終端機視窗，從「檔案總管」開啟終端機視窗，會直接跳到目前所在目錄。
 
 ![1738734329809.png](1738734329809.png)
 
-
->[!Tip]
->sudo 允許一般用戶以 root 或其他特定帳號權限執行程式，使用 sudo 會詢問使用者的密碼，這時候請輸入目前使用者(user) 的密碼，不是輸入 root 密碼，因為 Lubuntu 沒有啟用 root 帳號。
+> [!Tip]
+> sudo 允許一般用戶以 root 或其他特定帳號權限執行程式，使用 sudo 會詢問使用者的密碼，這時候請輸入目前使用者(user) 的密碼，不是輸入 root 密碼，因為 Lubuntu 沒有啟用 root 帳號。
 
 「在終端機視窗」執行以下命令，安裝編譯核心模組需要的相關程式以及安裝 VBoxGuestAddition
+
 ```bash title="Shell"
 sudo apt update
 sudo apt install build-essential
@@ -109,7 +108,6 @@ sudo ./VBoxLinuxAdditions.run
 
 ![2023-12-12-08-50-31.png](2023-12-12-08-50-31.png)
 
-
 apt 是 ubuntu 、 debian 系統命令列的套件安裝管理程式。執行以下指令安裝「 openssh-server」
 
 ```bash title="Shell"
@@ -118,7 +116,7 @@ sudo apt install openssh-server
 
 ### 5.2. 安裝中文輸入法及補齊中文翻譯
 
-執行以下指令安裝「 fcitx + 新酷音」中文輸入法  。 
+執行以下指令安裝「 fcitx + 新酷音」中文輸入法 。
 
 ```bash title="Shell"
 sudo apt install fcitx5-chewing
@@ -128,6 +126,7 @@ sudo apt install fcitx5-chewing
 ![20250123-10.png](20250123-10.png)
 
 因為 Lubuntu 比較輕量，有些繁體中文翻譯套件預設沒安裝，我們順便將它補齊
+
 ```bash title="Shell"
 sudo apt install language-pack-zh-hant language-pack-gnome-zh-hant language-pack-kde-zh-hant libreoffice-l10n-zh-tw firefox-locale-zh-hant
 ```
@@ -141,17 +140,17 @@ sudo apt install language-pack-zh-hant language-pack-gnome-zh-hant language-pack
 使用 Discover 就可以方便的搜尋、安裝各種應用程式。也可以一鍵更新系統已經安裝的套件及軟體。
 ![20250123-12.png](20250123-12.png)
 
->[!tip]
->另外一個我最喜歡使用的套件管理程式是 Synaptic，也推薦大家使用看看
->```bash title="Shell"
->sudo apt install synaptic apt-xapian-index
->```
+> [!tip]
+> 另外一個我最喜歡使用的套件管理程式是 Synaptic，也推薦大家使用看看
+>
+> ```bash title="Shell"
+> sudo apt install synaptic apt-xapian-index
+> ```
 
 ### 5.4. 常用軟體推薦，請試著自己安裝看看
 
-gimp、inkscape、krita、audacity、blender... 
+gimp、inkscape、krita、audacity、blender...
 我就喜歡這種 linux 跟 windows 都有的應用程式，用久就會發現==用什麼「作業系統」不是重點，應用程式才是。==
-
 
 ### 5.5. 網路介面卡設定
 
@@ -190,7 +189,6 @@ gimp、inkscape、krita、audacity、blender...
 
 使用【檔案/匯入應用裝置】就可以將匯入 .ova 檔案，變成一台獨立的虛擬機。
 在匯出 ova 時我們有將虛擬機的 MAC 儲存在 .ova 檔案中，如果是用來做機器復原，我們可以選擇保留網路卡的 MAC，如果是用來建立出一個獨立的新虛擬機器，則建議選擇「**為所有網路卡產生新的MAC位址**」，以免新機器的網卡 MAC address 跟其他虛擬機重複。
-
 
 ![20250123-19.png](20250123-19.png)
 

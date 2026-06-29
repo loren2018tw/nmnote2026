@@ -14,7 +14,7 @@ hero:
       link: /10-VirtualBox/05-vm_vs_container.html
     - theme: brand # 品牌色按鈕
       text: 📖 Librenms
-      link: /20-librenms/10_librenms_introduce.html
+      link: /20-librenms/10-librenms_introduce.html
     - theme: alt # 灰色按鈕
       text: 🐙 GitHub
       link: https://github.com/loren2018tw

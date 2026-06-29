@@ -2,6 +2,7 @@ import { defineConfig } from "vitepress";
 import { generateSidebar } from "vitepress-sidebar";
 // @ts-ignore
 import obsidian from "markdown-it-obsidian";
+import footnote from "markdown-it-footnote";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -16,7 +17,7 @@ export default defineConfig({
     nav: [
       { text: "Home", link: "/" },
       { text: "VirtualBox", link: "/10-VirtualBox/05-vm_vs_container" },
-      { text: "Librenms", link: "/20-librenms/10_librenms_introduce" },
+      { text: "Librenms", link: "/20-librenms/10-librenms_introduce" },
     ],
 
     sidebar: generateSidebar([
@@ -50,6 +51,9 @@ export default defineConfig({
     // socialLinks: [
     //   { icon: "github", link: "https://github.com/vuejs/vitepress" },
     // ],
+    lastUpdated: {
+      text: "最後更新時間",
+    },
   },
 
   markdown: {
@@ -61,6 +65,7 @@ export default defineConfig({
           // 如果你的圖片跟 md 檔在同一個資料夾，保持預設即可
         }),
       );
+      md.use(footnote);
     },
   },
 });
