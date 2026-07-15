@@ -32,9 +32,8 @@ sudo apt install postfix
 
 ### 1.2 【全域設定/警報/電子郵件設定】
 
-在 Librenms 的【全域設定/警報/電子郵件設定】，將發送郵件的方式設定為　使用 mail 指令:
-
-![1750652432508.png](1750652432508.png)
+在 Librenms 的【全域設定/警報/電子郵件設定】，將發送郵件的方式設定為　使用 smtp 指令:
+![postfix_mail01](postfix_mail01.png)
 
 ### 1.3 新增 mail 傳送器
 
