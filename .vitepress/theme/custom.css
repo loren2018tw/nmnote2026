@@ -1,3 +1,19 @@
+body {
+  font-synthesis: weight style;
+}
+
+kbd {
+  font-family: inherit;
+  font-weight: 500;
+  padding: 2px 6px;
+  border: 1px solid var(--vp-c-border);
+  border-radius: 4px;
+  background-color: var(--vp-c-bg-mute);
+  font-size: 0.875em;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
 .group:has([role='button']) .VPSidebarItem.level-0 .items {
   padding-left: 16px !important;
   border-left: 1px solid var(--vp-c-divider);

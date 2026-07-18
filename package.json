@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@types/markdown-it-footnote": "^3.0.4",
+    "markdown-it-mark": "^4.0.0",
     "vitepress": "^2.0.0-alpha.15",
     "vue": "^3.5.27"
   },

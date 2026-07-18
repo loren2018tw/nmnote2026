@@ -21,6 +21,9 @@ importers:
       '@types/markdown-it-footnote':
         specifier: ^3.0.4
         version: 3.0.4
+      markdown-it-mark:
+        specifier: ^4.0.0
+        version: 4.0.0
       vitepress:
         specifier: ^2.0.0-alpha.15
         version: 2.0.0-alpha.17(postcss@8.5.15)
@@ -637,6 +640,9 @@ packages:
 
   markdown-it-footnote@4.0.0:
     resolution: {integrity: sha512-WYJ7urf+khJYl3DqofQpYfEYkZKbmXmwxQV8c8mO/hGIhgZ1wOe7R4HLFNwqx7TjILbnC98fuyeSsin19JdFcQ==}
+
+  markdown-it-mark@4.0.0:
+    resolution: {integrity: sha512-YLhzaOsU9THO/cal0lUjfMjrqSMPjjyjChYM7oyj4DnyaXEzA8gnW6cVJeyCrCVeyesrY2PlEdUYJSPFYL4Nkg==}
 
   markdown-it-obsidian@1.1.0:
     resolution: {integrity: sha512-NO/ZYuIYn2PuKIHeYox9TcN0wtPuLFbrG5gn6S++jMZmoEDp6Y46km1x2mMTnvjTWj6E0sfPILfrU+yfSoI6YQ==}
@@ -1335,6 +1341,8 @@ snapshots:
   mark.js@8.11.1: {}
 
   markdown-it-footnote@4.0.0: {}
+
+  markdown-it-mark@4.0.0: {}
 
   markdown-it-obsidian@1.1.0:
     dependencies:

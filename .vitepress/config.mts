@@ -3,10 +3,12 @@ import { generateSidebar } from "vitepress-sidebar";
 // @ts-ignore
 import obsidian from "markdown-it-obsidian";
 import footnote from "markdown-it-footnote";
+import markdownItMark from "markdown-it-mark";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   srcDir: "docs",
+  lang: "zh-TW",
   base: "/nmnote2026/",
   ignoreDeadLinks: true,
 
@@ -66,6 +68,7 @@ export default defineConfig({
         }),
       );
       md.use(footnote);
+      md.use(markdownItMark);
     },
   },
 });

@@ -102,6 +102,19 @@ sudo ./VBoxLinuxAdditions.run
 
 ## 5. Lubuntu 軟體安裝
 
+### 5.0 apt 套件管理 CLI 工具
+
+apt 是 ubuntu 系列的套件（軟體）安裝工具，基礎命令參數如下：
+
+```bash title="Shell"
+# 更新套件版本清單
+sudo apt update
+# 升級已安裝套件
+sudo apt upgrade
+# 安裝某個套件或軟體
+sudo apt install {{套件名稱}}
+```
+
 ### 5.1. 安裝 ssh server
 
 開啟終端機（命令列）視窗內
@@ -150,11 +163,11 @@ sudo apt install language-pack-zh-hant language-pack-gnome-zh-hant language-pack
 ### 5.4. 常用軟體推薦，請試著自己安裝看看
 
 gimp、inkscape、krita、audacity、blender...
-我就喜歡這種 linux 跟 windows 都有的應用程式，用久就會發現==用什麼「作業系統」不是重點，應用程式才是。==
+我就喜歡這種 linux 跟 windows 都有的應用程式，用久就會發現**用什麼「作業系統」不是重點，應用程式才是。**
 
 ### 5.5. 網路介面卡設定
 
-點擊 Lubuntu 右下角的網路圖示按下滑鼠右鍵++right-button++，可以設定我們這台主機要使用的 ip，預設是使用 dhcp ，如有需要可以在這裡做修改。
+點擊 Lubuntu 右下角的網路圖示按下 <kbd>🖱️滑鼠右鍵</kbd> ，可以設定我們這台主機要使用的 ip，預設是使用 dhcp ，如有需要可以在這裡做修改。
 
 ![1738743282954.png](1738743282954.png)
 
