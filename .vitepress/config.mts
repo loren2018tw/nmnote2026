@@ -3,6 +3,7 @@ import { generateSidebar } from "vitepress-sidebar";
 // @ts-ignore
 import obsidian from "markdown-it-obsidian";
 import footnote from "markdown-it-footnote";
+// @ts-ignore
 import markdownItMark from "markdown-it-mark";
 
 // https://vitepress.dev/reference/site-config
@@ -20,6 +21,7 @@ export default defineConfig({
       { text: "Home", link: "/" },
       { text: "VirtualBox", link: "/10-VirtualBox/05-vm_vs_container" },
       { text: "Librenms", link: "/20-librenms/10-librenms_introduce" },
+      { text: "Q&A", link: "/30-Q&A/10-index" },
     ],
 
     sidebar: generateSidebar([
@@ -53,6 +55,9 @@ export default defineConfig({
     // socialLinks: [
     //   { icon: "github", link: "https://github.com/vuejs/vitepress" },
     // ],
+    search: {
+      provider: "local",
+    },
     lastUpdated: {
       text: "最後更新時間",
     },
